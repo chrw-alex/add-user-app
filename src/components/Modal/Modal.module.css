@@ -1,0 +1,55 @@
+.layout {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.modal {
+  width: 600px;
+  height: 200px;
+  background-color: white;
+  margin: auto;
+  padding: 20px 0px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px rgb(163, 105, 82);
+}
+
+.errorText {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  margin-bottom: 20px;
+  background-color: brown;
+  color: #fff;
+  font-size: 20px;
+}
+
+.errorText p {
+  margin: auto;
+}
+
+.modal div {
+  text-align: center;
+}
+
+.button {
+  width: 40%;
+  margin: 0 auto;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: brown;
+  box-shadow: 1px 1px 3px rgb(163, 105, 82);
+  color: #fff;
+  transition: background-color .2s ease-in-out;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgb(117, 30, 30);
+}

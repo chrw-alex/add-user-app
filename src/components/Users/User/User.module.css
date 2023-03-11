@@ -1,0 +1,12 @@
+.user {
+  width: 80%;
+  margin: 0 auto;
+  padding: 5px 10px;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  margin-bottom: 14px;
+}
+
+.user p {
+  width: fit-content;
+}

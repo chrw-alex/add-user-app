@@ -1,25 +1,35 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import UsersForm from './components/UsersForm/UsersForm';
+import Modal from './components/Modal/Modal'
+import Users from './components/Users/Users';
 import './App.css';
 
-function App() {
+const App = () => {
+
+  const [users, setUsers] = useState([])
+  const [validationError, setValidationError] = useState('')
+
+  const addUser = (name, age) => {
+    const newUser = {
+      id: Math.random().toString(),
+      name,
+      age
+    }
+
+    setUsers((prevUsers) => {
+      return [newUser, ...prevUsers]
+    })
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {validationError && <Modal validationError={validationError} setValidationError={setValidationError} />}
+      <div className='App'>
+        <UsersForm addUser={addUser} setValidationError={setValidationError} />
+        <Users users={users} />
+      </div>
+    </>
   );
 }
 
-export default App;
+export default App
